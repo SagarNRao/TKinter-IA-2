@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import font
 from modules import get_response
 from PIL import Image
 from io import BytesIO
@@ -8,7 +9,15 @@ root = Tk()
 frame = Frame(root)
 frame.pack()
 
+default_font = font.nametofont("TkDefaultFont")
+default_font.configure(size=10)
+
 result = StringVar()
+
+listbox = Listbox(frame)
+# making the listbox wider
+listbox.config(width=43)
+listbox.pack()
 
 entry = Entry(frame, width=50)
 entry.pack()
@@ -25,8 +34,7 @@ button.pack()
 label = Label(frame, textvariable=result)
 label.pack()
 
-listbox = Listbox(frame)
-listbox.pack()
+
 
 #whenever i send anything to the ai, the prompt and the response will be shown in the listbox
 def call_get_response():
