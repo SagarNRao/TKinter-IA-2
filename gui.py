@@ -31,8 +31,8 @@ def call_get_response():
 button = Button(frame, text="Talk to AI", command=call_get_response)
 button.pack()
 
-label = Label(frame, textvariable=result)
-label.pack()
+# label = Label(frame, textvariable=result)
+# label.pack()
 
 
 
