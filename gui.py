@@ -23,6 +23,7 @@ def call_get_response():
     # Insert the user's message and the AI's response into the Text widget
     text.insert(END, "User: " + entry.get() + '\n')
     text.insert(END, "AI: " + result.get() + '\n')
+    text.configure(state=DISABLED)
 
 button = Button(frame, text="Talk to AI", command=call_get_response)
 button.pack()
